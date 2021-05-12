@@ -11,7 +11,7 @@ def hello():
   return render_template( './ChatApp.html' )
 
 def messageRecived():
-  print( 'message was received!!!' )
+  print('Mensagem recebida.')
 
 @socketio.on( 'my event' )
 def handle_my_custom_event( json ):
