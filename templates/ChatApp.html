@@ -57,19 +57,19 @@
         socket.emit( 'my event', {
           data: 'User Connected'
         } )
-        var form = $( 'form' ).on( 'submit', function( e ) {
-          e.preventDefault()
-          let user_name = $( 'input.username' ).val()
-          let user_input = $( 'input.message' ).val()
-          socket.emit( 'my event', {
-            user_name : user_name,
-            message : user_input
-          } )
-          // Limpa o campo de imput
-          $( 'input.message' ).val( '' ).focus()
-        } )
       } )
 
+      var form = $( 'form' ).on( 'submit', function( e ) {
+        e.preventDefault()
+        let user_name = $( 'input.username' ).val()
+        let user_input = $( 'input.message' ).val()
+        socket.emit( 'my event', {
+          user_name : user_name,
+          message : user_input
+        } )
+        // Limpa o campo de imput
+        $( 'input.message' ).val( '' ).focus()
+      } )
       // Realiza um GET na mensagem
       socket.on( 'my response', function( msg ) {
         console.log( msg )
